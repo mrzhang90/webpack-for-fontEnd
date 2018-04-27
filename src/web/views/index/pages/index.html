@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=1180">
+    <title>Camplink首页</title>
+    {{css}}
+    <base target='_blank'>
+</head>
+<body>
+<section class="header phoneWidth">
+    <section class="head1 clear">
+        <div class="left">
+            <a href="/" target="_self"> </a>
+        </div>
+        <div class="right">
+            <div class="search">
+                <input type="text" value=""><div class="inco"><a href="search.html"></a></div>
+            </div>
+            <div style="float:left;margin-left: 7px;padding-top:8px;">
+                <div class="index_login"><a href="/login.html">登录</a></div>
+                <div class="tel">
+                    <span>客户热线：010-59354211</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="head_nav">
+        <div class="width_content">
+            <nav>
+                <div class="index_icon" id="user_active">
+                    <a href="index.jsp" target="_self">首页</a>
+                </div>
+                <div class="about_icon ">
+                    <a href="about.html" target="_self">关于我们</a>
+                </div>
+                <div class="news_icon ">
+                    <a href="news.html"target="_self"><span>Camplink</span>资讯</a>
+                </div>
+                <div class="private_icon ">
+                    <a href="customized.html"target="_self">私人定制</a>
+                </div>
+                <div class="personal_icon ">
+                    <a href="login.html"target="_self">个人中心</a>
+                </div>
+            </nav>
+        </div>
+    </section>
+</section>
+<!--选择我的营地-->
+<section class="select_camp phoneWidth">
+    
+    <div class="width_content">
+        <p class="p1">选择我的营地</p>
+        <div class="div_input"><input type="text" id="place" class="posElement1" placeholder="想去哪里" autocomplete="off"></div>
+        <div class="div_input"><input type="text" id="wantDo" class="posElement2" placeholder="想做什么" autocomplete="off" id="J_EndDate"></div>
+        <div class="div_input">
+            <div class="dataDiv depDiv"><input placeholder="出发时间" class="startTime" id="J_DepDate" type="text" class="f-text" value="" /></div>
+            <div class="dataDiv endDiv" style="display:none;"><input placeholder="出发时间" class="startTime" id="J_EndDate" type="text" class="f-text" value="" /></div>
+            <div class="dataPos">至</div>
+        </div>
+    </div>
+</section>
+<!--热门特价-->
+<section class="hotNew_camp width_content">
+    <div class="hot_title clear">
+        <a href="/search.jsp" class="home_more">More</a>
+        <div class="border_hot"></div>
+        <div class="div_p_hot">
+            <p>热门营地 HOT</p>
+        </div>
+        <div class="border_hot"></div>
+    </div>
+</section>
+<!--关于Camplink-->
+<section class="about_camp width_content" onclick="window.open('/about.html')">
+    <span>关于Camplink</span>
+</section>
+<!--主题分类-->
+<section class="subjects_camp width_content">
+    <div class="hot_title clear">
+        <a href="/search.jsp" class="home_more">More</a>
+        <div class="border_hot"></div>
+        <div class="div_p_hot">
+            <p>主题分类</p>
+            <p class="p1">SUBJECTRS</p>
+        </div>
+        <div class="border_hot"></div>
+    </div>
+</section>
+<section class="footer phoneWidth">
+    <div class="div1_foot width_content">
+        <span class="span1">公司地址：北京市朝阳区西大望路甲12号2号楼（国家广告产业园区孵化器27681号）</span>&nbsp;|&nbsp;<span class="span2">客服电话：010-59354211</span><br/>
+        <span class="span1">加入我们：<a href="mailto:hr@camplink.cn" target="_blank">hr@camplink.cn</a></span>&nbsp;|&nbsp;<span class="span2">公司邮箱：<a href="mailto:home@camplink.cn" target="_blank">home@camplink.cn</a></span><br/>
+        <span>Copyright©2015-2017, Camplink.cn. All Rights Reserved. | Powered by <a href="http://www.igalaxy.com.cn/" target="_blank">iGalaxy</a> | <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备17010797号</a></span>
+    </div>
+</section>
+<ul class='posElement' id='posElement1' style='position:absolute;display:none;'></ul>
+<ul class='posElement' id='posElement2' style='position:absolute;display:none;'></ul>
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/json2/20160511/json2.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+<![endif]-->
+<!--[if gte IE 9|(!IE)]>
+<script src="https://cdn.bootcss.com/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+<![endif]-->
+{{js}}
+</body>
+</html>
