@@ -4,11 +4,23 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const ROOT_PATH=path.resolve(__dirname);
+const SRC_PATH=path.resolve(ROOT_PATH,"src");
+const ENTRIE_PATH = path.resolve(ROOT_PATH, './src/web/views/');
+const HTML_PATH = path.resolve(ROOT_PATH, './src/web/');
+
 const htmlAfterWebpackPlugin = require('./config/htmlAfterWebpackPlugin');
 const getFiles=require('./src/nodeuii/controllers/getFiles.js');
-const entriePath = path.join(__dirname, './src/web/views/');
-const htmlPath = path.join(__dirname, './src/web/');
-const jsEntris = getFiles(entriePath)
+//多入口
+const jsEntris = getFiles(ENTRIE_PATH)
+// const jsEntris={
+// 	entry:{
+// 		app:path.resolve(SRC_PATH,"widgets/app.js"),
+// 		login:path.resolve(SRC_PATH,"widgets/login.js"),
+// 		preview:path.resolve(SRC_PATH,"widgets/preview.js")
+// 	}
+// }
 const _entries = Object.assign(jsEntris.jsEntris);
 const _resolve = {
 	extensions: [".js", ".css"]
@@ -21,12 +33,12 @@ const fontloader = {
 	test: /\.(eot|woff|woff2|ttf|svg|otf)$/,
 	loader: 'file-loader?name=fonts/[name].[ext]'
 };
-const htmlFiles = getFiles(htmlPath).htmlFiles;
-console.log(_entries)
+const htmlFiles = getFiles(HTML_PATH).htmlFiles;
+// console.log(_entries)
 const webpackConfig = {
 	entry: _entries,
 	output: {
-		path: path.join(__dirname, './build/'),
+		path: path.resolve(ROOT_PATH, './build/'),
 		publicPath: '/',
 		filename: 'scripts/[name]-entry.js',
 		chunkFilename: '[id].bundle.js',
@@ -76,8 +88,10 @@ const webpackConfig = {
 		// 	Vue: 'vue',
 		// 	vue: 'vue',
 		// }),
+		//会将所有的 入口chunk (entry chunks) 中的 require("style.css") 移动到分开的 css 文件
 		new ExtractTextPlugin("styles/[name].css"),
 		new webpack.optimize.ModuleConcatenationPlugin(),
+		//配置的全局常量
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'dev')
 		})
